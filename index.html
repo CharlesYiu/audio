@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio.js - yiu.ch</title>
+    <script src="https://yiu.ch/favicon.js"></script>
+    <style>
+        * { font-family: monospace; }
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+
+            padding: 50px 0px 0px 0px;
+            margin: unset;
+        }
+
+        header {
+            height: min-content;
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            height: 200px;
+        }
+        header > div.other { height: 100px; }
+        header > div.other > h2 { line-height: 0px; }
+        header > div.other > a.github {
+            background-color: #444;
+            padding: 10px 50px 10px 50px;
+            color: white;
+        }
+        header > div.heading {
+            border: 2.5px solid #444;
+            width: fit-content;
+            padding: 0px 50px 0px 50px;
+
+            margin-right: 50px;
+        }
+        header > div.heading > h1 {
+            text-align: center;
+            font-size: 500%;
+            line-height: 10px;
+        }
+        header > div.heading > p {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        main {
+            border-top: 2.5px solid #444;
+            overflow-x: scroll;
+            position: fixed;
+            top: 200px;
+            left: 50px;
+            height: calc(100% - 200px);
+            width: calc(100% - 100px);
+        }
+        main h1 { font-size: 250%;  }
+        main > div.usage > div.steps {
+            display: grid;
+            grid-auto-flow: column;
+            overflow-y: scroll;
+            border: 2.5px solid #444;
+
+            margin: 0px 25px 0px 25px;
+        }
+        main > div.usage > div.steps > div.step:nth-child(1) { border-left: none; }
+        main > div.usage > div.steps > div.step:nth-last-child(1) { border-right: none; }
+        main > div.usage > div.steps > div.step {
+            border-right: 2.5px solid #444;
+            padding: 50px;
+        }
+
+        main > div.linking > div {
+            display: flex;
+            flex-flow: row;
+            margin: 0px 25px 0px 25px;
+        }
+        main > div.linking > div > p.process {
+            width: 50%;
+            flex: 1 1 auto;
+            margin-right: 25px;
+        }
+        main > div.linking > div > pre.code { flex: 0 1 auto; }
+
+        main > div.configuration > div {
+            display: flex;
+            flex-flow: row;
+            width: 100%;
+        }
+        main > div.configuration div > h2 { flex: 1 1 auto; }
+        main > div.configuration div > pre.code { flex: 0 1 auto; }
+        
+        body a.code, body button.code {
+            border: none;
+            padding: 1em;
+            background: #f3f3f3;
+            color: #444;
+        }
+
+        body .clickable {
+            transition: opacity 100ms;
+            cursor: pointer;
+            opacity: 1;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+        body .clickable:hover { opacity: 0.75; }
+
+        @media screen and (max-width: 850px) {
+            header > div.other { display: none; }
+            header > div.heading { margin-right: 0px; }
+            main {
+                left: 25px;
+                height: calc(100% - 200px);
+                width: calc(100% - 50px);
+            }
+            main > div.usage > div.steps > div.step { padding: 10px; }
+            main > div.linking > div > p.process { width: 100%; }
+            main > div.linking > div { flex-flow: column; }
+            main > div.configuration > div { flex-flow: column; }
+        }
+    </style>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="audio.js" defer volume="0.1" muted="false"></script>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>audio.js</h1>
+            <p>- a clean way of adding audio -</p>
+        </div>
+        <div class="other">
+            <h2>embed -</h2>
+            <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer&gt;&lt;/script&gt;</code></pre>
+            <a class="clickable github" href="https://github.com/charlesyiu/audio">github</a>
+            <script>
+                document.querySelector("header > div.other > pre.code").addEventListener("click", _ => {
+                    navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer></scr'+'ipt>')
+                })
+            </script>
+        </div>
+    </header>
+    <main>
+        <div class="usage">
+            <h1>usage -</h1>
+            <div class="steps">
+                <div class="step embed">
+                    <h2>embed</h2>
+                    <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer&gt;&lt;/script&gt;</code></pre>
+                    <script>
+                        document.querySelector("main > div.usage > div.steps > div.step.embed > pre.code").addEventListener("click", _ => {
+                            navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer></scr'+'ipt>')
+                        })
+                    </script>
+                </div>
+                <div class="step implement">
+                    <h2>implement</h2>
+                    <pre class="clickable code" title="copy code"><code class="language-html">&lt;source class=&quot;sound&quot; src=&quot;sound.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+&lt;button class=&quot;sound:click&quot;&gt;play sound&lt;/button&gt;</code></pre>
+                    <script>
+                        document.querySelector("main > div.usage > div.steps > div.step.implement > pre.code").addEventListener("click", _ => {
+                            navigator.clipboard.writeText('<source class="sound" src="sound.mp3" type="audio/mp3">\n<button class="sound:click">play sound</button>')
+                        })
+                    </script>
+                </div>
+                <div class="step dispatch">
+                    <h2>dispatch</h2>
+                    <source class="sound" src="sound.wav" type="audio/wav">
+                    <button class="clickable code sound:click">play sound</button>
+                </div>
+            </div>
+        </div>
+        <div class="linking">
+            <h1>linking -</h1>
+            <div>
+                <p class="process">
+                    linking is a simple process of putting the right classes on the right elements.<br>
+                    to link sounds to events, put a class on the source element of the sound you want
+                    then place the same class with an optional colon with the event name to the element
+                    you want for the sound to be played when the event is dispatched.
+                </p>
+                <pre class="clickable code" title="copy code"><code class="language-html">&lt;source class=&quot;name&quot; src=&quot;file&quot; type=&quot;audio/type&quot;&gt;
+&lt;button class=&quot;name:event&quot;&gt;dispatch event&lt;/button&gt;</code></pre>
+                <script>
+                    document.querySelector("main > div.linking > div > pre.code").addEventListener("click", _ => {
+                        navigator.clipboard.writeText('<source class="name" src="file" type="audio/type">\n<button class="name:event">dispatch event</button>')
+                    })
+                </script>
+            </div>
+        </div>
+        <div class="configuration">
+            <h1>configuration -</h1>
+            <p>
+                the configuration is just like setting it on a regular html audio element and any changes to the configuration will be applied in an instant.
+            </p>
+            <div class="mute">
+                <h2>- mute audio</h2>
+                <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer muted&gt;&lt;/script&gt;</code></pre>
+                <script>
+                    document.querySelector("main > div.configuration > div.mute > pre.code").addEventListener("click", _ => {
+                        navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer muted></scr'+'ipt>')
+                    })
+                </script>
+            </div>
+            <div class="volume">
+                <h2>- set volume</h2>
+                <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer volume=&quot;0.5&quot;&gt;&lt;/script&gt;</code></pre>
+                <script>
+                    document.querySelector("main > div.configuration > div.volume > pre.code").addEventListener("click", _ => {
+                        navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer volume="0.5"></scr'+'ipt>')
+                    })
+                </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
