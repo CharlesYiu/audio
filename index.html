@@ -134,6 +134,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="audio.js" defer volume="0.1" muted="false"></script>
+    <source class="sound" src="sound.wav" type="audio/wav">
 </head>
 <body>
     <header>
@@ -143,8 +144,8 @@
         </div>
         <div class="other">
             <h2>embed -</h2>
-            <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer&gt;&lt;/script&gt;</code></pre>
-            <a class="clickable github" href="https://github.com/charlesyiu/audio">github</a>
+            <pre class="clickable code sound:click" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer&gt;&lt;/script&gt;</code></pre>
+            <a class="clickable github sound:click" href="https://github.com/charlesyiu/audio">github</a>
             <script>
                 document.querySelector("header > div.other > pre.code").addEventListener("click", _ => {
                     navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer></scr'+'ipt>')
@@ -158,7 +159,7 @@
             <div class="steps">
                 <div class="step embed">
                     <h2>embed</h2>
-                    <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer&gt;&lt;/script&gt;</code></pre>
+                    <pre class="clickable code sound:click" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer&gt;&lt;/script&gt;</code></pre>
                     <script>
                         document.querySelector("main > div.usage > div.steps > div.step.embed > pre.code").addEventListener("click", _ => {
                             navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer></scr'+'ipt>')
@@ -167,7 +168,7 @@
                 </div>
                 <div class="step implement">
                     <h2>implement</h2>
-                    <pre class="clickable code" title="copy code"><code class="language-html">&lt;source class=&quot;sound&quot; src=&quot;sound.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+                    <pre class="clickable code sound:click" title="copy code"><code class="language-html">&lt;source class=&quot;sound&quot; src=&quot;sound.mp3&quot; type=&quot;audio/mp3&quot;&gt;
 &lt;button class=&quot;sound:click&quot;&gt;play sound&lt;/button&gt;</code></pre>
                     <script>
                         document.querySelector("main > div.usage > div.steps > div.step.implement > pre.code").addEventListener("click", _ => {
@@ -177,7 +178,6 @@
                 </div>
                 <div class="step dispatch">
                     <h2>dispatch</h2>
-                    <source class="sound" src="sound.wav" type="audio/wav">
                     <button class="clickable code sound:click">play sound</button>
                 </div>
             </div>
@@ -191,7 +191,7 @@
                     then place the same class with an optional colon with the event name to the element
                     you want for the sound to be played when the event is dispatched.
                 </p>
-                <pre class="clickable code" title="copy code"><code class="language-html">&lt;source class=&quot;name&quot; src=&quot;file&quot; type=&quot;audio/type&quot;&gt;
+                <pre class="clickable code sound:click" title="copy code"><code class="language-html">&lt;source class=&quot;name&quot; src=&quot;file&quot; type=&quot;audio/type&quot;&gt;
 &lt;button class=&quot;name:event&quot;&gt;dispatch event&lt;/button&gt;</code></pre>
                 <script>
                     document.querySelector("main > div.linking > div > pre.code").addEventListener("click", _ => {
@@ -207,7 +207,7 @@
             </p>
             <div class="mute">
                 <h2>- mute audio</h2>
-                <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer muted&gt;&lt;/script&gt;</code></pre>
+                <pre class="clickable code sound:click" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer muted&gt;&lt;/script&gt;</code></pre>
                 <script>
                     document.querySelector("main > div.configuration > div.mute > pre.code").addEventListener("click", _ => {
                         navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer muted></scr'+'ipt>')
@@ -216,7 +216,7 @@
             </div>
             <div class="volume">
                 <h2>- set volume</h2>
-                <pre class="clickable code" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer volume=&quot;0.5&quot;&gt;&lt;/script&gt;</code></pre>
+                <pre class="clickable code sound:click" title="copy code"><code class="language-html">&lt;script src=&quot;https://audio.yiu.ch/audio.js&quot; defer volume=&quot;0.5&quot;&gt;&lt;/script&gt;</code></pre>
                 <script>
                     document.querySelector("main > div.configuration > div.volume > pre.code").addEventListener("click", _ => {
                         navigator.clipboard.writeText('<scr'+'ipt src="https://audio.yiu.ch/audio.js" defer volume="0.5"></scr'+'ipt>')
