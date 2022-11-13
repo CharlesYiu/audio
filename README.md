@@ -1,4 +1,4 @@
-# audio.js
+# [audio.js](https://audio.yiu.ch)
 ## embed
 ```html
 <script src="https://audio.yiu.ch/audio.js" defer></script>
